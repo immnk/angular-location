@@ -1,5 +1,5 @@
 var app = angular.module('starter', ['ui.bootstrap', 'ui.bootstrap.collapse',
-    'ui.router', 'ngMaterial', 'ngAnimate'
+    'ui.router', 'ngMaterial', 'ngAnimate', 'ui.map', 'ui.event'
 ]);
 
 app.config([
