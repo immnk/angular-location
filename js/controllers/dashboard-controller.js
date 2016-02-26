@@ -94,6 +94,7 @@ function DashboardController($scope, $state, $http, $uibModal) {
                         humidity: response.data.main.humidity,
                         pressure: response.data.main.pressure,
                         temp: response.data.main.temp - 273.15,
+                        name: response.data.name,
                         minTemp: response.data.main.temp_min - 273.15,
                         maxTemp: response.data.main.temp_max - 273.15,
                         icon: 'http://openweathermap.org/img/w/' + response.data.weather[0].icon + '.png'
