@@ -13,7 +13,7 @@ app.config([
         $filterProvider, $provide) {
         $stateProvider
 
-        .state('menu', {
+            .state('menu', {
             url: '/menu',
             abstract: true,
             templateUrl: 'templates/menu.html',

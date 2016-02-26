@@ -1,5 +1,22 @@
 .dashboard .map {
   height: 400px;
   width: 100%; }
+.dashboard .card {
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  background: #ECECEC;
+  border: 1px solid #6C7A89;
+  overflow: hidden;
+  margin: 10px;
+  cursor: default;
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Likely future */ }
 
 /*# sourceMappingURL=dashboard.css.map */

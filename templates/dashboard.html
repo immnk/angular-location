@@ -6,22 +6,32 @@
                 </div>
             </div>
         </div>
-        <div class="row padding-top padding-bottom">
+        <div class="row card padding">
             <div class="col-md-12" ng-show="showResult()">
-                <div>Latitude: {{lat}}</div>
-                <div>Longitude: {{lng}}</div>
-                <div>Accuracy: {{accuracy}}</div>
+                <div class="padding-top padding-bottom">Latitude: {{lat|number:2}}</div>
+                <div class="padding-top padding-bottom">Longitude: {{lng|number:2}}</div>
+                <div class="padding-top padding-bottom">Accuracy: {{accuracy}}</div>
             </div>
             <div class="col-md-12" ng-show="!showResult()">
                 Error : {{error}} Error Code: {{error.code}}
             </div>
         </div>
-        <div class="row padding-top padding-bottom" ng-show="weatherData !== null">
-            <div class="col-md-12">
-                <div>{{weatherData.humidity}}</div>
-                <div>{{weatherData.pressure}}</div>
-                <div>{{weatherData.temp}}</div>
+        <div class="row card padding" ng-show="weatherData !== null">
+            <div class="col-xs-4">
+                <div class="padding-bottom">Humidity</div>
+                <h4>{{weatherData.humidity}} %</h4>
+                <div class="padding-bottom">Pressure</div>
+                <h4>{{weatherData.pressure}} hPa</h4>
+            </div>
+            <div class="col-xs-4">
+                <h3>{{weatherData.temp|number:2}}&deg;C</h3>
                 <img ng-src="{{weatherData.icon}}">
+            </div>
+            <div class="col-xs-4">
+                <div class="padding-bottom">Min temp</div>
+                <h4>{{weatherData.minTemp|number:2}}&deg;C</h4>
+                <div class="padding-bottom">Max temp</div>
+                <h4>{{weatherData.maxTemp|number:2}}&deg;C</h4>
             </div>
         </div>
     </div>

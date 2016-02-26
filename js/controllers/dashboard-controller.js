@@ -1,9 +1,9 @@
 app.components
     .controller('DashboardCtrl', DashboardController);
 
-DashboardController.inject = ['$scope', '$state', '$http'];
+DashboardController.inject = ['$scope', '$state', '$http', '$uibModal'];
 
-function DashboardController($scope, $state, $http) {
+function DashboardController($scope, $state, $http, $uibModal) {
     $scope.lat = "0";
     $scope.lng = "0";
     $scope.accuracy = "0";
@@ -15,7 +15,8 @@ function DashboardController($scope, $state, $http) {
     $scope.showError = function(error) {
         switch (error.code) {
             case error.PERMISSION_DENIED:
-                $scope.error = "User denied the request for Geolocation."
+                $scope.error = "You've denied the request for Geolocation."
+                $scope.showModal();
                 break;
             case error.POSITION_UNAVAILABLE:
                 $scope.error = "Location information is unavailable."
@@ -28,6 +29,34 @@ function DashboardController($scope, $state, $http) {
                 break;
         }
         $scope.$apply();
+    }
+
+    $scope.showModal = function() {
+        var modalInstance = $uibModal.open({
+            animation: $scope.animationsEnabled,
+            templateUrl: 'templates/custom-location-modal.html',
+            controller: 'CustomLocationModalCtrl',
+
+            resolve: {
+                load: ['$q', '$rootScope', function($q, $rootScope) {
+                    var deferred = $q.defer();
+                    require([
+                        'js/controllers/custom-location-modal-ctrl'
+                    ], function() {
+                        $rootScope.$apply(function() {
+                            deferred.resolve();
+                        });
+                    });
+                    return deferred.promise;
+                }]
+            }
+        });
+
+        modalInstance.result.then(function(response) {
+            $scope.error = response;
+        }, function() {
+            console.info('Modal dismissed at: ' + new Date());
+        });
     }
 
     $scope.showResult = function() {
@@ -60,12 +89,14 @@ function DashboardController($scope, $state, $http) {
 
         $http.get(weatherUrl)
             .then(function(response) {
-                if(response.status == 200){
+                if (response.status == 200) {
                     $scope.weatherData = {
                         humidity: response.data.main.humidity,
                         pressure: response.data.main.pressure,
                         temp: response.data.main.temp - 273.15,
-                        icon: 'http://openweathermap.org/img/w/'+response.data.weather[0].icon+'.png'
+                        minTemp: response.data.main.temp_min - 273.15,
+                        maxTemp: response.data.main.temp_max - 273.15,
+                        icon: 'http://openweathermap.org/img/w/' + response.data.weather[0].icon + '.png'
                     }
                 }
             }, function(error) {
