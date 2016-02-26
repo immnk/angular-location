@@ -1,0 +1,29 @@
+{
+  "name": "StudentCollab",
+  "homepage": "https://github.com/immnk/StudentCollab",
+  "authors": [
+    "Mani <im.manikanta@gmail.com>"
+  ],
+  "description": "A project using angular js and require js",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "angularjs",
+    "requirejs",
+    "collab"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    // "components-font-awesome": "latest",
+    // "bootstrap": "latest",
+    // "angular-material": "latest"
+  }
+}

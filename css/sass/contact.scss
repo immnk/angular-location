@@ -1,0 +1,125 @@
+$card-height: 400px;
+$card-width: 400px;
+$caption-background: #2c3f52;
+$caption-special: #ed4e6e;
+$caption-height: 160px;
+
+/* SASS / Social Media Brand Colors */
+
+$twitter: #00aced;
+$facebook: #3b5998;
+$googleplus: #dd4b39;
+$general: #1b926c;
+.grid {
+    padding: 60px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    list-style: none;
+    text-align: center;
+    li {
+        display: inline-block;
+        width: $card-width + 40px; // For padding 40px
+        margin: 0;
+        padding: 20px;
+        text-align: left;
+        position: relative;
+    }
+    figure {
+        margin: 0;
+        position: relative;
+        width: $card-width;
+        height: $card-height + 80px; // For outside ul
+        -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        .img {
+            width: $card-width;
+            height: $card-height;
+            position: relative;
+            z-index: 10;
+            transition: transform 0.4s;
+        }
+        .mani {
+            background: #EEE url('../../img/mani.jpg') no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+        &:hover .img {
+            transform: translateY(-$caption-height / 2);
+            /* 20 padding + 50 h3 + 30 p*/
+        }
+    }
+    figcaption {
+        position: absolute;
+        top: auto;
+        left: 0;
+        bottom: 0;
+        padding: 0 20px;
+        background: $caption-background;
+        color: #FFF;
+        width: 100%;
+        -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        h3 {
+            margin: 0;
+            padding: 5px 0;
+            line-height: 40px;
+            color: $caption-special;
+            font-size: 2em;
+        }
+        p {
+            font-size: 0.7em;
+            font-style: italic;
+            line-height: 20px;
+            margin: 0;
+            padding: 5px 0;
+        }
+    }
+    .social {
+        list-style: none;
+        text-align: center;
+        padding: 10px 0;
+        li {
+            display: inline-block;
+            width: auto;
+            // width: 60px;
+            // height: 60px;
+            text-align: center;
+            border-radius: 50%;
+            /* background: #2AAEF3; */
+            padding: 0px;
+            a {
+                text-decoration: none;
+                color: white;
+                padding: 20px;
+                height: 60px;
+                width: 60px;
+                display: block;
+            }
+            &:hover {
+                background: rgba(131, 142, 167, 0.42);
+            }
+        }
+        .general {
+            background: $general;
+        }
+        .facebook {
+            background: $facebook;
+        }
+        .google {
+            background: $googleplus;
+        }
+        .twitter {
+            background: $twitter;
+        }
+    }
+}
+
+// @media screen and (max-width: 768px) {
+//     .grid {
+//         figure {
+//             height: $card-height + 160px; // 160px for figcaption
+//         }
+//     }
+// }

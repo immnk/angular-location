@@ -1,0 +1,110 @@
+.dashboard .filter-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  background: rgba(255, 255, 255, 0.5);
+  border-right: 1px solid #010101;
+  z-index: 10;
+  transition: .5s all ease-in; }
+  .dashboard .filter-panel .category {
+    width: 100%;
+    padding: 10px; }
+    .dashboard .filter-panel .category .category-filter {
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #000;
+      border-radius: 15px; }
+    .dashboard .filter-panel .category .block-element {
+      display: block; }
+  .dashboard .filter-panel .total-courses {
+    border: 1px solid #6C7A89;
+    background: #6C7A89;
+    color: white;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75); }
+.dashboard .showMenu {
+  left: 0px !important;
+  background: white; }
+.dashboard .content {
+  margin-left: 200px;
+  transition: .5s all ease-in; }
+  .dashboard .content .title-search {
+    margin: 18px 0 10px;
+    width: 100%; }
+  .dashboard .content .row {
+    margin-left: 0;
+    margin-right: 0; }
+  .dashboard .content .course {
+    position: relative;
+    /* width: 100%; */
+    overflow: hidden;
+    border: 1px solid #9a9a9a;
+    margin: 10px;
+    padding: 10px 0 10px 10px;
+    transition: 1s linear all;
+    -webkit-transition: 1s linear all;
+    background: rgba(255, 255, 255, 0.5); }
+    .dashboard .content .course img {
+      width: 300px;
+      height: 150px;
+      object-fit: cover;
+      display: block; }
+    .dashboard .content .course .cascade, .dashboard .content .course .rating, .dashboard .content .course .link {
+      display: inline-block;
+      padding: 5px; }
+    .dashboard .content .course .link {
+      margin-right: 5px;
+      float: right; }
+    .dashboard .content .course .content-wrapper {
+      width: calc( 100% - 175px); }
+      .dashboard .content .course .content-wrapper .title {
+        font-weight: 900;
+        font-size: 2.2em; }
+      .dashboard .content .course .content-wrapper .description {
+        overflow: hidden;
+        text-overflow: ellipsis; }
+    .dashboard .content .course .tag {
+      position: absolute;
+      right: 0;
+      top: 20px;
+      background: #6C7A89;
+      color: white;
+      width: 175px;
+      text-align: right;
+      padding: 10px;
+      -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75); }
+    .dashboard .content .course .price {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      font-weight: 600; }
+  .dashboard .content .course.ng-enter.ng-enter-active {
+    -webkit-animation: slideInRight 0.5s both ease-in;
+    -moz-animation: slideInRight 0.5s both ease-in;
+    animation: slideInRight 0.5s both ease-in; }
+  .dashboard .content .course.ng-enter-stagger {
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+    /* this is here to avoid accidental CSS inheritance */
+    -webkit-transition-duration: 0;
+    transition-duration: 0; }
+  .dashboard .content .course.ng-leave.ng-leave-active {
+    -webkit-animation: slideOutLeft 0.5s both ease-in;
+    -moz-animation: slideOutLeft 0.5s both ease-in;
+    animation: slideOutLeft 0.5s both ease-in; }
+
+@media only screen and (max-width: 768px) {
+  .dashboard .filter-panel {
+    left: -200px; }
+  .dashboard .content {
+    margin-left: 0; } }
+
+/*# sourceMappingURL=dashboard.css.map */

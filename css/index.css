@@ -1,0 +1,12 @@
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body{
+	background: #E2E2E2;
+}
+.body{
+  background: #E2E2E2 url(../img/climpek.png) repeat 0 0;
+  font-family: 'Lato', sans-serif;
+}

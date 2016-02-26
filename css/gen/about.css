@@ -1,0 +1,33 @@
+@charset "UTF-8";
+.about blockquote {
+  background: #2c3f52;
+  border-left: 10px solid #989898;
+  margin: 1.5em 10px;
+  padding: 1em 10px;
+  quotes: "“" "”" "‘" "’";
+  font-size: 1.4em;
+  color: #ed4e6e;
+  overflow: hidden; }
+.about blockquote:before {
+  color: #989898;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em; }
+.about blockquote p {
+  display: inline;
+  float: right; }
+.about .description p {
+  font-size: 1.2em; }
+.about a {
+  padding: 5px;
+  text-decoration: none;
+  border-bottom: 1px solid #333;
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all; }
+.about a:hover {
+  background: #fef4f4;
+  border-color: #DD1B16; }
+
+/*# sourceMappingURL=about.css.map */

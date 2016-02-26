@@ -1,0 +1,46 @@
+$caption-background: #2c3f52;
+$caption-special: #ed4e6e;
+$caption-height: 160px;
+$quote-border: #989898;
+
+.about{
+  blockquote {
+    background: $caption-background;
+    border-left: 10px solid $quote-border;
+    margin: 1.5em 10px;
+    padding: 1em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+    font-size: 1.4em;
+    color: $caption-special;
+    overflow: hidden;
+  }
+  blockquote:before {
+    color: $quote-border;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+  blockquote p {
+    display: inline;
+    float: right;
+  }
+
+  .description p{
+    font-size: 1.2em;
+  }
+
+  a {
+    padding: 5px;
+    text-decoration: none;
+    border-bottom: 1px solid #333;
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+  }
+
+  a:hover{
+    background: #fef4f4;
+    border-color: #DD1B16;
+  }
+}
