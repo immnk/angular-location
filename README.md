@@ -1,6 +1,6 @@
 # angular-location
 
-Angular location is simple project that solves your location problems with weather data. It gives you some of the best practices in Angular and it sourced from Angular starter template from @ [angular-starter-template]
+Angular location is simple project that solves your location problems with weather data. It gives you some of the best practices in Angular and it sourced from Angular starter template from @ [angular-starter-template](https://github.com/immnk/angular-starter-template-webapp)
 
   - Angular js
   - Require js
@@ -32,5 +32,3 @@ MIT
 
 
 **Free Software, Hell Yeah!**
-
-   [angular-starter-template] : https://github.com/immnk/angular-starter-template-webapp
