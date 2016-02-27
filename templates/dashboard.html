@@ -12,8 +12,13 @@
                 <div class="padding-top padding-bottom">Longitude: {{lng|number:2}}</div>
                 <div class="padding-top padding-bottom">Accuracy: {{accuracy}}</div>
             </div>
-            <div class="col-md-12" ng-show="!showResult()">
-                Error : {{error}} Error Code: {{error.code}}
+            <div class="col-md-12 text-danger" ng-show="!showResult()">
+                {{error}}
+            </div>
+        </div>
+        <div class="row card padding">
+            <div class="col-md-12">
+                <md-button class="md-raised md-primary" ng-click="showModal()">Change location</md-button>
             </div>
         </div>
         <div class="row card padding" ng-show="weatherData !== null">
