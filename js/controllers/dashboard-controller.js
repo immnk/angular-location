@@ -53,7 +53,33 @@ function DashboardController($scope, $state, $http, $uibModal) {
         });
 
         modalInstance.result.then(function(response) {
-            $scope.error = response;
+            var weatherUrl = 'http://api.openweathermap.org/data/2.5/weather?APPID=aa03c952ea4dba3db6561d5fc09a4052' + '&zip=' + response.message;
+
+            $http.get(weatherUrl)
+                .then(function(response) {
+                    console.log(response);
+                    if (response.status == 200) {
+                        $scope.weatherData = {
+                            humidity: response.data.main.humidity,
+                            pressure: response.data.main.pressure,
+                            temp: response.data.main.temp - 273.15,
+                            name: response.data.name,
+                            minTemp: response.data.main.temp_min - 273.15,
+                            maxTemp: response.data.main.temp_max - 273.15,
+                            icon: 'http://openweathermap.org/img/w/' + response.data.weather[0].icon + '.png'
+                        }
+                        $scope.lat = response.data.coord.lat;
+                        $scope.lng = response.data.coord.lon;
+                        
+                        var latlng = new google.maps.LatLng($scope.lat, $scope.lng);
+                        $scope.model.myMap.setCenter(latlng);
+                        $scope.myMarkers.push(
+                            new google.maps.Marker({ map: $scope.model.myMap, position: latlng })
+                        );
+                    }
+                }, function(error) {
+                    console.log(error);
+                })
         }, function() {
             console.info('Modal dismissed at: ' + new Date());
         });
